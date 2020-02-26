@@ -1,0 +1,47 @@
+<div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 jumbotron text-center container">
+    <form [formGroup]="signupform" (ngSubmit)="onsubmit()">
+
+
+    <div formGroupName="userdata">
+
+        <div>
+            <label >name </label> <input type="text"  formControlName="iname" class="form-control "   >
+        <span class="badge badge-danger" 
+        *ngIf=" !signupform.get('userdata.iname').valid && signupform.get('userdata.iname').touched ">
+            you must write name
+        </span>
+        </div>
+        <div>
+            <label >last name </label> <input type="text"  formControlName="ilastname" class="form-control "  >
+            <span class="badge badge-danger" 
+        *ngIf=" !signupform.get('userdata.ilastname').valid && signupform.get('userdata.ilastname').touched ">
+            you must write last name
+        </span>
+        </div>
+    
+    
+        <div>
+            <label >age </label> <input type="number" formControlName="iage" class="form-control "     >
+            <span class="badge badge-danger" 
+        *ngIf=" !signupform.get('userdata.iage').valid && signupform.get('userdata.iage').touched ">
+        please insert a valid age
+        </span>
+        </div>
+    
+    
+        <div>
+            <label >code </label> <input type="number"  formControlName="icode" class="form-control "   >
+            <span class="badge badge-danger" 
+        *ngIf=" !signupform.get('userdata.icode').valid && signupform.get('userdata.icode').touched ">
+            please insert your student code
+        </span>
+        </div>
+
+    </div>
+
+
+    <br>
+    <button type="submit" class="btn btn-primary" [disabled]="!signupform.valid"  >save</button>
+    </form>
+    <h6 class="badge badge-warning text-wrap">for enable button please complete this form</h6>
+    </div> 
